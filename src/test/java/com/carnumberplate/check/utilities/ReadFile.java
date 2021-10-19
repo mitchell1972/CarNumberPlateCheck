@@ -35,20 +35,17 @@ public class ReadFile {
         String line = "";
         while ((line = reader.readLine()) != null) {
             if (line.contains("registration")) {
-                System.out.println(line);
                 matcher = pattern.matcher(line);
                 matcherTwo = patternTwo.matcher(line);
                 while (matcher.find()) {
                     carRegArr[arrayIndex]=matcher.group();
                     carReg.add(matcher.group());
-                    System.out.println(matcher.group());
                     arrayIndex++;
                 }
                 while (matcherTwo.find()) {
                     try {
                         carReg.add(matcherTwo.group());
                         carRegArr[arrayIndex]=matcherTwo.group();
-                        System.out.println(matcherTwo.group());
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
@@ -65,7 +62,6 @@ public class ReadFile {
         BufferedReader reader = new BufferedReader(file);
         String line = "";
         while ((line = reader.readLine()) != null) {
-            System.out.println(line);
             output.add(line);
         }
         return output;
